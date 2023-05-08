@@ -1,1 +1,24 @@
-<p>card works!</p>
+<div class="bg-white w-80 h-96 p-4 flex flex-col gap-4 relative rounded-md">
+  <span
+    class="absolute bg-secondary px-2 py-[2px] text-white text-sm rounded-full"
+    >{{ category }}</span
+  >
+  <div class="w-44 h-44 m-auto">
+    <img
+      class="object-contain w-full h-full"
+      src="{{ img }}"
+      alt="{{ title }}"
+    />
+  </div>
+  <div class="flex justify-between items-center">
+    <h3>{{ title.split(" ").slice(0, 7).join(" ") }}</h3>
+    <span class="p-1 rounded-full text-secondary text-sm">{{ price }}</span>
+  </div>
+  <div class="flex justify-between items-center">
+    <div>
+      <p class="text-xs">{{ desc.split(" ").slice(0, 7).join(" ") }}</p>
+      <a *ngIf="readMore" href="#">read more...</a>
+    </div>
+    <button (click)="addToCart()">Add</button>
+  </div>
+</div>

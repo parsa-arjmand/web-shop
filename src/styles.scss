@@ -25,4 +25,14 @@
   h5 {
     @apply text-gray-800;
   }
+  h3 {
+    @apply font-bold;
+  }
+}
+@layer components {
+  .resp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
 }

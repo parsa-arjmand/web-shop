@@ -1,5 +1,5 @@
 export interface Card {
-  id?: number;
+  id: number;
   title: string;
   price: number;
   category: string;

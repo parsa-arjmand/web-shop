@@ -1,13 +1,22 @@
-<div
-  class="w-full md:w-2/4 bg-white rounded-md p-4 flex items-center justify-between"
->
+<div class="w-full bg-white rounded-md p-4 flex items-center justify-between">
   <div class="flex items-center gap-4">
-    <img class="w-full h-full object-contain" src="" alt="" />
-    <div class="flex flex-col">
-      <h3>title</h3>
-      <span>category</span>
-      <span>price</span>
+    <img class="w-24 h-24 object-contain" [src]="img" alt="" />
+    <div class="flex flex-col gap-1">
+      <h3 class="max-w-xs">{{ title }}</h3>
+      <span>{{ cat }}</span>
+      <span
+        class="bg-secondary px-2 py-[2px] text-white text-sm rounded-full max-w-fit"
+        >{{ price }}$</span
+      >
     </div>
   </div>
-  <div>dial</div>
+  <div class="flex flex-col items-center">
+    <div>dialer</div>
+    <button
+      (click)="onDelete()"
+      class="bg-transparent border border-red-500 text-red-600 hover:bg-red-400 hover:text-black transition-all"
+    >
+      delete
+    </button>
+  </div>
 </div>

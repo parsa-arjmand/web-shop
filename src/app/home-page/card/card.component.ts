@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class CardComponent {
   constructor(private productService: ProductService) {}
-  @Input() id: number | undefined;
+  @Input() id!: number;
   @Input() title!: string;
   @Input() desc!: string;
   @Input() price!: number;

@@ -2,15 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 @layer base {
   body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Poppins", sans-serif;
     @apply bg-bg-main;
   }
   button {
-    @apply text-white bg-primary border-0 py-2 px-6 rounded-lg text-sm;
+    font-family: "Poppins", sans-serif;
+    @apply text-white bg-primary border-0 py-2 px-5 rounded-lg text-sm;
   }
   ul {
     list-style: none;

@@ -9,9 +9,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CartComponent } from './cart/cart.component';
 import { CardComponent } from './home-page/card/card.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, CartComponent, CardComponent, CartItemComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    CartComponent,
+    CardComponent,
+    CartItemComponent,
+    ShortenPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

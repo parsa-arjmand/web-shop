@@ -1,5 +1,8 @@
 <section class="flex flex-col gap-4">
   <h2 class="my-12 font-bold text-2xl">Order Summary</h2>
+  <div *ngIf="error" class="error">
+    something went wrong while fetching the results
+  </div>
   <app-cart-item
     *ngFor="let item of cartItems"
     [id]="item.id"
@@ -9,5 +12,5 @@
     [cat]="item.category"
     (deletedItemId)="deleteCartItem($event)"
   ></app-cart-item>
-  <div *ngIf="cartItems === null">No Item Added Yet</div>
+  <div *ngIf="!error && cartItems.length < 1">No Item Added Yet</div>
 </section>

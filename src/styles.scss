@@ -36,4 +36,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
   }
+  .error {
+    @apply bg-red-100 p-3 rounded-md shadow-sm shadow-red-300 w-fit text-red-800;
+  }
 }

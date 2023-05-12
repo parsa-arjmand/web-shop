@@ -9,13 +9,17 @@ import { Card } from '../Card';
 export class HomePageComponent implements OnInit {
   productItems!: Card[];
   loading: boolean = true;
+  error = false;
   constructor(private productService: ProductService) {}
   ngOnInit(): void {
-    this.productService.getItems().subscribe((result) => {
-      this.productItems = result;
-      this.loading = false;
-      console.log(this.loading);
-      console.log(this.productItems);
+    this.productService.getItems().subscribe({
+      next: (result) => {
+        this.productItems = result;
+        this.loading = false;
+        console.log(this.loading);
+        console.log(this.productItems);
+      },
+      error: (err) => (this.error = true),
     });
   }
 }

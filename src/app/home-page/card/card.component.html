@@ -23,9 +23,14 @@
       >{{ price }}$</span
     >
     <button class="text-xs" (click)="addToCart()">Add To Cart</button>
-    <app-modal [isOpen]="openModal">
-      <p>Item is now added to your cart!</p>
-      <button>shopping cart</button>
-    </app-modal>
   </div>
 </div>
+<!--open modal-->
+<app-modal [isOpen]="openModal">
+  <p>
+    Item is now added to your
+    <span class="text-secondary font-bold">cart</span>!
+  </p>
+  <button routerLink="/cart">shopping cart</button>
+  <!---->
+</app-modal>

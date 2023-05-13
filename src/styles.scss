@@ -11,7 +11,7 @@
   }
   button {
     font-family: "Poppins", sans-serif;
-    @apply text-white bg-primary border-0 py-2 px-5 rounded-lg text-sm;
+    @apply transition text-white bg-primary border-0 py-2 px-5 rounded-lg text-sm hover:bg-transparent hover:border  hover:text-black;
   }
   ul {
     list-style: none;

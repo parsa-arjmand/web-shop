@@ -1,0 +1,10 @@
+<div
+  *ngIf="isOpen"
+  class="fixed bg-gray-400 h-full w-full top-0 left-0 grid place-content-center"
+>
+  <div
+    class="w-[60vw] h-auto bg-white shadow-sm grid place-content-center p-4 z-10"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

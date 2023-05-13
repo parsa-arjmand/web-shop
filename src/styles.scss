@@ -7,7 +7,7 @@
 @layer base {
   body {
     font-family: "Poppins", sans-serif;
-    @apply bg-bg-main;
+    @apply bg-bg-main relative;
   }
   button {
     font-family: "Poppins", sans-serif;

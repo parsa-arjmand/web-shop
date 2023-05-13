@@ -15,11 +15,10 @@ export class CardComponent {
   @Input() img?: string;
   @Input() category!: string;
   readMore!: boolean;
-  showMore() {
-    console.log(this.desc.split(' '));
-    // if(this.desc.split(" ") > 7) this.readMore = true;
-  }
+  openModal = false;
   addToCart() {
+    //show added modal
+    this.openModal = true;
     const newItem = {
       id: this.id,
       title: this.title,

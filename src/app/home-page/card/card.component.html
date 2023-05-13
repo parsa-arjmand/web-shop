@@ -16,7 +16,6 @@
     <h3>{{ title | shorten : 10 }}</h3>
     <div>
       <p class="text-xs">{{ desc | shorten : 15 }}</p>
-      <a *ngIf="readMore" href="#">read more...</a>
     </div>
   </div>
   <div class="flex justify-between items-center gap-2">
@@ -24,5 +23,9 @@
       >{{ price }}$</span
     >
     <button class="text-xs" (click)="addToCart()">Add To Cart</button>
+    <app-modal [isOpen]="openModal">
+      <p>Item is now added to your cart!</p>
+      <button>shopping cart</button>
+    </app-modal>
   </div>
 </div>

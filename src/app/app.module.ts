@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { CardComponent } from './home-page/card/card.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { ShortenPipe } from './shorten.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ShortenPipe } from './shorten.pipe';
     CardComponent,
     CartItemComponent,
     ShortenPipe,
+    AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
   providers: [],

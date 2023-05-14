@@ -11,8 +11,9 @@
   }
   button {
     font-family: "Poppins", sans-serif;
-    @apply transition text-white bg-primary border-0 py-2 px-5 rounded-lg text-sm hover:bg-transparent hover:border  hover:text-black;
+    @apply transition text-white bg-primary border-0 py-2 px-5 rounded-lg text-sm hover:bg-transparent hover:outline hover:outline-1  hover:text-black;
   }
+
   ul {
     list-style: none;
   }
@@ -29,6 +30,16 @@
   h3 {
     @apply font-bold;
   }
+  label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  input,
+  textarea {
+    padding: 8px 10px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 3px;
+  }
 }
 @layer components {
   .resp-grid {
@@ -38,5 +49,21 @@
   }
   .error {
     @apply bg-red-100 p-3 rounded-md shadow-sm shadow-red-300 w-fit text-red-800;
+  }
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .form {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: white;
+    width: 456px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 33px;
+    height: 100%;
   }
 }

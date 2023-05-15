@@ -39,6 +39,7 @@
     padding: 8px 10px;
     border: 1px solid rgb(224, 224, 224);
     border-radius: 3px;
+    @apply text-textLight text-sm;
   }
 }
 @layer components {

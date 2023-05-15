@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
     this.productService.getCartItems().subscribe({
       next: (result) => {
         this.cartItems = result;
+        console.log(result);
       },
       error: (err) => (this.error = true),
     });

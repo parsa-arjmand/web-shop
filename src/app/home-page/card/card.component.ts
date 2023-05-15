@@ -25,7 +25,7 @@ export class CardComponent {
       price: this.price,
       category: this.category,
       description: this.desc,
-      imagePath: this.img,
+      image: this.img,
     };
     this.productService
       .postItems(newItem)

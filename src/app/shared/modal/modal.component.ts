@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,4 +6,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ModalComponent {
   @Input() isOpen!: boolean;
+  @Output() isOpenChange = new EventEmitter<boolean>();
+
+  modalStateChange() {
+    this.isOpenChange.emit(this.isOpen);
+  }
 }

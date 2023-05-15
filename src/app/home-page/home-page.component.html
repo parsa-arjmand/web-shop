@@ -4,6 +4,7 @@
   <div *ngIf="loading && !error" class="text-black">
     Fetching Products Data...
   </div>
+  <div *ngIf="error" class="error">something went wrong !</div>
   <app-card
     class="justify-self-center"
     *ngFor="let item of productItems"

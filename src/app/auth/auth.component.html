@@ -1,0 +1,31 @@
+<div class="grid place-content-center h-[85vh]">
+  <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <span class="font-bold text-xl mb-8">Register Now</span>
+    <div class="input-wrapper">
+      <label for="username">username:</label>
+      <input type="text" id="username" ngModel name="username" required />
+    </div>
+    <div class="input-wrapper">
+      <label for="password">password:</label>
+      <input
+        type="password"
+        id="password"
+        ngModel
+        name="password"
+        required
+        (input)="checkInputLength()"
+        [ngClass]="{ 'border border-red-500': 'shortUser' }"
+      />
+    </div>
+
+    <button type="submit" class="bg-primary mt-4">
+      {{ login ? "login" : "signup" }}
+    </button>
+    <span class="text-xs text-textLight mt-4"
+      >{{ login ? "already have an account?" : "don't have an account?" }}
+      <a class="text-secondary underline" (click)="onSwitchMode()">{{
+        login ? "signup" : "login"
+      }}</a></span
+    >
+  </form>
+</div>

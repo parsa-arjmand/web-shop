@@ -28,4 +28,7 @@ export class ProductService {
   deleteItems(itemId: number): Observable<Card> {
     return this.http.delete<Card>(`${this.backEnd}/${itemId}`);
   }
+  updateCartItem(item: Card): Observable<Card> {
+    return this.http.put<Card>(`${this.backEnd}/${item.id}`, item);
+  }
 }

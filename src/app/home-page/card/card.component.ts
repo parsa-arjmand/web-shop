@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { Card } from 'src/app/Card';
 import { ProductService } from 'src/app/services/product.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
 })
-export class CardComponent {
-  constructor(private productService: ProductService) {}
+export class CardComponent implements OnInit {
+  constructor(
+    private productService: ProductService,
+    private uiService: UiService
+  ) {}
   @Input() id!: number;
   @Input() title!: string;
   @Input() desc!: string;
@@ -16,8 +21,19 @@ export class CardComponent {
   @Input() category!: string;
   readMore!: boolean;
   openModal = false;
+  //temp
+  cartItems!: Card[];
+
+  //CHECK IF THIS CODE IS OPTIMIZED
+  ngOnInit() {
+    this.productService.getCartItems().subscribe((results) => {
+      this.cartItems = results;
+      console.log('cart', this.cartItems);
+    });
+  }
   addToCart() {
     //show added modal
+
     this.openModal = true;
     const newItem = {
       id: this.id,
@@ -27,6 +43,20 @@ export class CardComponent {
       description: this.desc,
       image: this.img,
     };
+
+    //updating cart if the item already exists
+
+    this.cartItems.forEach((cartItem) => {
+      if (newItem.id === cartItem.id) {
+        console.log('yes');
+        newItem.price = 12;
+        this.productService
+          .updateCartItem(newItem)
+          .subscribe(() => console.log('item modified'));
+      }
+    });
+
+    console.log('here', this.cartItems);
     this.productService
       .postItems(newItem)
       .subscribe(() => console.log('item added'));

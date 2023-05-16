@@ -2,17 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Card } from 'src/app/Card';
 import { ProductService } from 'src/app/services/product.service';
-import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
 })
 export class CardComponent implements OnInit {
-  constructor(
-    private productService: ProductService,
-    private uiService: UiService
-  ) {}
+  constructor(private productService: ProductService) {}
   @Input() id!: number;
   @Input() title!: string;
   @Input() desc!: string;
@@ -48,14 +44,12 @@ export class CardComponent implements OnInit {
 
     this.cartItems.forEach((cartItem) => {
       if (newItem.id === cartItem.id) {
-        console.log('yes');
-        newItem.price = 12;
+        newItem.price += cartItem.price;
         this.productService
           .updateCartItem(newItem)
           .subscribe(() => console.log('item modified'));
       }
     });
-
     console.log('here', this.cartItems);
     this.productService
       .postItems(newItem)

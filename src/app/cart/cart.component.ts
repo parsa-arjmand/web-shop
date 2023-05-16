@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../Card';
 import { ProductService } from '../services/product.service';
-import { UiService } from '../services/ui.service';
+import { Card } from '../Card';
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +9,7 @@ import { UiService } from '../services/ui.service';
 export class CartComponent implements OnInit {
   cartItems!: Card[];
   error: boolean = false;
-  constructor(
-    private productService: ProductService,
-    private uiService: UiService
-  ) {}
+  constructor(private productService: ProductService) {}
   ngOnInit() {
     this.productService.getCartItems().subscribe({
       next: (result) => {

@@ -67,4 +67,7 @@
     padding: 33px;
     height: 100%;
   }
+  .ng-invalid {
+    border: 1px solid red !important;
+  }
 }

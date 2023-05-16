@@ -1,9 +1,23 @@
 <div class="grid place-content-center h-[85vh]">
-  <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
     <span class="font-bold text-xl mb-8">Register Now</span>
     <div class="input-wrapper">
       <label for="username">username:</label>
-      <input type="text" id="username" ngModel name="username" required />
+      <input
+        type="text"
+        id="username"
+        ngModel
+        name="username"
+        required
+        #username="ngModel"
+        [ngClass]="{ 'border-red-500': username.invalid && username.touched }"
+      />
+      <div
+        *ngIf="username.invalid && username.touched"
+        class="text-xs mt-2 text-red-500"
+      >
+        username is required
+      </div>
     </div>
     <div class="input-wrapper">
       <label for="password">password:</label>
@@ -13,12 +27,19 @@
         ngModel
         name="password"
         required
-        (input)="checkInputLength()"
-        [ngClass]="{ 'border border-red-500': 'shortUser' }"
+        #password="ngModel"
+        minlength="8"
+        [ngClass]="{ 'border-red-500': password.invalid && password.touched }"
       />
+      <div
+        *ngIf="password.invalid && password.touched"
+        class="text-xs mt-2 text-red-500"
+      >
+        passwords should be at least 8 characters
+      </div>
     </div>
 
-    <button type="submit" class="bg-primary mt-4">
+    <button type="submit" class="bg-primary mt-4" [disabled]="form.invalid">
       {{ login ? "login" : "signup" }}
     </button>
     <span class="text-xs text-textLight mt-4"

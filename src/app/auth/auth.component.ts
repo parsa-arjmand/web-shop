@@ -7,17 +7,12 @@ import { NgForm } from '@angular/forms';
 export class AuthComponent {
   login: boolean = true;
   username: string = '';
-  shortUser = true;
   password?: string;
   onSwitchMode() {
     this.login = !this.login;
   }
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    console.log(form);
     form.reset();
-  }
-  checkInputLength() {
-    if (this.username.length > 8) this.shortUser = false;
-    console.log(this.username);
   }
 }

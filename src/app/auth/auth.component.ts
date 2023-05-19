@@ -20,23 +20,25 @@ export class AuthComponent {
       password: form.value.password,
     };
     if (!this.loginMode) {
+      this.signupStatus = false;
       // SIGNUP
       this.authService.signup(user).subscribe(() => {
         this.signupStatus = true;
 
         form.reset();
       });
-    } else {
-      //LOGIN
-
-      this.authService.signin().subscribe((resp) => {
-        const foundUser = resp.find(
-          (dbUser) =>
-            dbUser.username === user.username &&
-            user.password === dbUser.password
-        );
-        if (foundUser != undefined) this.loginStatus = true;
-      });
     }
+    // else {
+    //   //LOGIN
+    //   this.loginStatus = false;
+    //   this.authService.signin().subscribe((resp) => {
+    //     const foundUser = resp.find(
+    //       (dbUser) =>
+    //         dbUser.username === user.username &&
+    //         user.password === dbUser.password
+    //     );
+    //     if (foundUser != undefined) this.loginStatus = true;
+    //   });
+    // }
   }
 }

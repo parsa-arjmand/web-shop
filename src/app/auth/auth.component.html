@@ -1,6 +1,8 @@
 <div class="grid place-content-center h-[85vh]">
   <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
-    <span class="font-bold text-xl mb-8">Register Now</span>
+    <span class="font-bold text-xl mb-8">{{
+      loginMode ? "Login Now" : "Register Now"
+    }}</span>
     <div class="input-wrapper">
       <label for="username">username:</label>
       <input

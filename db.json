@@ -1,3 +1,25 @@
 {
-  "cart": []
+  "cart": [],
+  "users": [
+    {
+      "username": "asdddd",
+      "password": "sssssssssssssss",
+      "id": 1
+    },
+    {
+      "username": "parsa",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "username": "ASDASD",
+      "password": "ASDASDASDASD",
+      "id": 3
+    },
+    {
+      "username": "parsa",
+      "password": "123456678990-",
+      "id": 4
+    }
+  ]
 }

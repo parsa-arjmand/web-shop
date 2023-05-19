@@ -40,13 +40,17 @@
     </div>
 
     <button type="submit" class="bg-primary mt-4" [disabled]="form.invalid">
-      {{ login ? "login" : "signup" }}
+      {{ loginMode ? "login" : "signup" }}
     </button>
     <span class="text-xs text-textLight mt-4"
-      >{{ login ? "already have an account?" : "don't have an account?" }}
+      >{{ loginMode ? "already have an account?" : "don't have an account?" }}
       <a class="text-secondary underline" (click)="onSwitchMode()">{{
-        login ? "signup" : "login"
+        loginMode ? "signup" : "login"
       }}</a></span
     >
   </form>
 </div>
+<!--model for signin-->
+<app-modal *ngIf="signupStatus" [isOpen]="true">
+  <h3>signup was successful!</h3>
+</app-modal>

@@ -1,18 +1,42 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from './auth.service';
+
 @Component({
   selector: 'app-auth',
   templateUrl: 'auth.component.html',
 })
 export class AuthComponent {
-  login: boolean = true;
-  username: string = '';
-  password?: string;
+  loginMode: boolean = true;
+  loginStatus = false;
+  signupStatus = false;
+  constructor(private authService: AuthService) {}
   onSwitchMode() {
-    this.login = !this.login;
+    this.loginMode = !this.loginMode;
   }
   onSubmit(form: NgForm) {
-    console.log(form);
-    form.reset();
+    const user = {
+      username: form.value.username,
+      password: form.value.password,
+    };
+    if (!this.loginMode) {
+      // SIGNUP
+      this.authService.signup(user).subscribe(() => {
+        this.signupStatus = true;
+
+        form.reset();
+      });
+    } else {
+      //LOGIN
+
+      this.authService.signin().subscribe((resp) => {
+        const foundUser = resp.find(
+          (dbUser) =>
+            dbUser.username === user.username &&
+            user.password === dbUser.password
+        );
+        if (foundUser != undefined) this.loginStatus = true;
+      });
+    }
   }
 }

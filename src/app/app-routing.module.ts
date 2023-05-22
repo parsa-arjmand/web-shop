@@ -4,11 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthComponent } from './auth/auth.component';
 
-const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'authentication', component: AuthComponent },
-];
+const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

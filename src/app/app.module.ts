@@ -6,29 +6,21 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HomePageComponent } from './home-page/home-page.component';
-import { CartComponent } from './cart/cart.component';
-import { CardComponent } from './home-page/card/card.component';
-import { CartItemComponent } from './cart/cart-item/cart-item.component';
-import { ShortenPipe } from './shorten.pipe';
-import { AuthComponent } from './auth/auth.component';
+import { AuthModule } from './auth/auth.module';
+import { CartModule } from './cart/cart.module';
+import { HomeModule } from './home-page/home.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    CartComponent,
-    CardComponent,
-    CartItemComponent,
-    ShortenPipe,
-    AuthComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HomeModule,
+    CartModule,
     HttpClientModule,
     FormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

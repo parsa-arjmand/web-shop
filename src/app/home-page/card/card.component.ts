@@ -24,7 +24,6 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     this.productService.getCartItems().subscribe((results) => {
       this.cartItems = results;
-      console.log('cart', this.cartItems);
     });
   }
   addToCart() {
@@ -50,7 +49,7 @@ export class CardComponent implements OnInit {
           .subscribe(() => console.log('item modified'));
       }
     });
-    console.log('here', this.cartItems);
+
     this.productService
       .postItems(newItem)
       .subscribe(() => console.log('item added'));

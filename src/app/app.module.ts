@@ -7,16 +7,22 @@ import { HomeModule } from './home-page/home.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { AuthModule } from './auth/auth.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
+    CartModule,
     SharedModule,
     HomeModule,
     HttpClientModule,
     FormsModule,
+    StoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

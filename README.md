@@ -1,4 +1,7 @@
-# ShoppingCart
+# WebShop
+
+![Screenshot 2023-05-27 114241](https://github.com/dev-parsa/web-shop/assets/105069707/04e066e8-7551-43ea-81d7-f18294d509d7)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
